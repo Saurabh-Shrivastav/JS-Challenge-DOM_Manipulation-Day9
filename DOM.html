@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <h2 id="h2">This is a H2 tag</h2>
+    <div class="container" style=" width: 100%; height: 100%; border: 1px solid black;"> Task 2</div>
+    <p>The Paragrap is for Task 5</p>
+
+    <div id="task6">
+        <p>para 1</p>
+        <p>para 2</p>
+        <p>para 3</p>
+    </div>
+
+    <img id="img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRuNGuLWIUkprhwez2CsElweJ60nsiuv9kIFm3GYJTgM48NwZaCHm0_JqnAUdbE1jnxjsw&usqp=CAU" alt="">
+
+    
+
+    <script>
+        // -------------------------------- DOM Manipulation --------------------------------
+        // ****************Activity 1 - Selecting and manipulating element*******************
+        /*Task 1:  Select an HTML element by it's id and change it's text content.*/
+
+        const tagH2 = document.getElementById('h2')
+        tagH2.textContent = 'The content changed by textcontent, which is Task 1'
+
+        /*Task 2:  Select an HTML element by it's class and change it's background color.*/
+        
+        const container = document.querySelector('.container')
+        container.style.backgroundColor = '#dadada'
+
+
+        // ****************Activity 2 - Creating and Appending Elements*************
+        /*Task 3: Create a new div element with some text content and 
+                  append it to the body  */ 
+            
+            let elementCreated = document.createElement('div')
+            elementCreated.textContent = 'The text did append form Dom, Which is Task 3'
+            document.body.appendChild(elementCreated)
+            
+
+        /*Task 4: Create a new li element and add it to an existing ul list */
+            
+            let createdUl = document.createElement('ul')
+            let createdLi = document.createElement('li')
+            createdLi.textContent = 'I am <li> form DOM and I am inside of <ul> tag, Which is task 4'
+            createdUl.appendChild(createdLi)  
+            document.body.appendChild(createdUl)
+
+        
+        // **************Activity 3 - Removing Elements****************
+        /*Task 5: Select an HTML element and remove it from the DOM. */
+        let para = document.querySelector('p')
+        para.remove()
+
+        /*Task 6: Remove the last child of a specific HTML element. */
+        let task = document.getElementById('task6')
+        let childrenLast = task.lastElementChild
+        task.removeChild(childrenLast)
+
+        
+        // **************Activity 4 - Modifying Attribute and classes************
+        /*Task 7: Select an HTML element and change one of its attribute
+                  (e.g., src of an img tag).    */
+        
+         const img = document.getElementById('img')
+         img.src = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT12okNGTKs_-FbL_6TrYp1RqhL6MdxXmpQcW00FygpiTTHCC00-msmFoTLZmiELH8yitI&usqp=CAU'
+
+         /*Task 8: Add and remove a CSS class to/from an HTML element */
+
+          const h3 = document.createElement('h3')
+          h3.textContent = 'Task 8'
+          h3.className = 'task8'
+          h3.classList.remove('task8')
+          document.body.append(h3)
+          
+
+        //************************* Event Handling *******************************
+          /*Task 9: Add a click event listener to a button that changes the content of a paragraph. */
+          const paragraph = document.createElement('p') 
+          paragraph.textContent = "This is the Paragraph from Task 9"
+          document.body.append(paragraph)
+          
+          const button = document.createElement('button')
+          button.textContent = 'Click and change paragraph'
+          document.body.append(button)
+          button.addEventListener('click',function(){
+            paragraph.textContent = 'Changed Paragraph by DOM'
+          })
+
+
+          /*Task 10: Add a mouseover event listener to an element that changes its border color. */
+
+          const divv = document.createElement('div')
+          divv.textContent = 'the Div with Task 10'
+          divv.style.border = '1px solid gray'
+          divv.style.marginTop = '10px'
+          divv.addEventListener('mouseover', function () {
+            divv.style.backgroundColor = 'pink'
+            divv.style.borderColor = 'red'
+          })
+          document.body.append(divv)
+          console.log(divv);
+          
+          
+         
+
+            
+    </script>
+</body>
+
+</html>
